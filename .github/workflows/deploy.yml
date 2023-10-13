@@ -5,7 +5,7 @@ on:
     inputs:
       pull_request_number:
         description: 'Pull Request Number'
-        required: true
+        required: false
 
 jobs:
   build:
