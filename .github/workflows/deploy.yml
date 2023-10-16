@@ -19,10 +19,12 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.x
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Change directory
+        run: cd NavigoPlatform  # Adjust the directory path if necessary
       - name: Upgrade pip
-        run: ls
-      - name: run python
+        run: python -m pip install --upgrade pip
+      - name: Run Python script
         run: |
-            python NavigoPlatform/trigger_pipeline.py
-            
-        
+            python trigger_pipeline.py
