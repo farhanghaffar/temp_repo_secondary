@@ -23,6 +23,6 @@ jobs:
         run: ls
       - name: run python
         run: |
-            python trigger_pipeline.py
+            python NavigoPlatform/trigger_pipeline.py
             
         
