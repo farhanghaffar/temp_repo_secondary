@@ -1,6 +1,9 @@
 name: Manual Trigger
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       pull_request_number:
@@ -12,6 +15,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - name: Upgrade pip
+        run: ls
+      - name: run python
+        run: |
+            python trigger_pipeline.py
+            
         
